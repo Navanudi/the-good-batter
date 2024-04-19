@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>TGB</title>
+</head>
+<body>
+    <div id="container">
+        <div id="side">
+            <h2>The Good</h2>
+            <h1>millet దోస millet</h1>
+            <h1>మిల్లెట్ dosa మిల్లెట్</h1>
+            <img src="Idly-white-TGB.png" alt="">
+            <h2 style="text-align: end;">Batter.</h2>
+
+
+          <div id="dragbar"></div>
+        </div>
+        <div id="main">
+            <h2>The Good</h2>
+            <h1>millet ఇడ్లీ millet</h1>
+            <h1>మిల్లెట్ idly మిల్లెట్</h1>
+            <img src="Idly-white-TGB.png" alt="">
+            <h2 style="text-align: end;">Batter.</h2>
+        
+        
+        
+        </div>
+    </div>
+    
+</body>
+<script>
+  var dragging = false;
+
+$('#dragbar').mousedown(function(e){
+  e.preventDefault();
+  dragging = true;
+  var side = $('#side');
+  var main =$('#main');
+  $(document).mousemove(function(ex){
+    side.css("width", ex.pageX +2);
+    
+  });
+});
+
+$(document).mouseup(function(e){
+  if (dragging) 
+  {
+    $(document).unbind('mousemove');
+    dragging = false;
+  }
+});
+
+</script>
+
+
+</html>
